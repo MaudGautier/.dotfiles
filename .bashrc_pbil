@@ -1,0 +1,109 @@
+#load my virtual env
+
+#source $HOME/vienv/env1/bin/activate
+#echo $(grep -c 'processor' /proc/cpuinfo) processors
+
+# Go to my fav working directory
+cd /beegfs/home/gautier
+
+# Changing language
+#export LANG=en_US.utf8
+
+### Display
+##bar=(`echo $SSH_CLIENT| cut -d' ' -f1`) 
+##export DISPLAY=$bar':'0.0
+
+#Customizing the prompt
+bleu='\e[1;34m'
+vert='\e[1;32m'
+end_color='\e[m'
+export PS1="\[$bleu\][\h\[$end_color\] \[$vert\]\W\[$end_color\] \[$bleu\]\A]$\[$end_color\] "
+
+# Aliases
+alias ll="ls -lhG --color"
+alias rm='rm -i'
+alias cp='cp -i'
+alias h='head -5'
+alias grep='grep --color=auto'
+alias col="awk '{if (NR % 2){printf \"\033[48;5;63m\"\$0\"\033[0m\n\"}else{print \$0}}'"
+#alias col="sed -e 'N;s/\(.*\)\n\(.*\)/\x1b[48;5;189m\1\x1b[0m\n\2/'"
+alias dirsize="du -h --max-depth=1"
+
+
+# Condor aliases
+alias crm="condor_rm"
+alias crak="condor_rm mgautier"
+alias cq="condor_q"
+alias cqk='condor_q mgautier'
+alias cqg="condor_q -g"
+alias cqr="condor_q -r"
+alias cqgr="condor_q -g -r"
+alias cqba="condor_q -g -better-analyze"
+alias cs="condor_status"
+alias csa="echo -e '------------------------------------------------------------------\nName       || Cpus  | Avail | Util% || Memory   | Avail  | Util% |\n------------------------------------------------------------------'; condor_status -constraint 'PartitionableSlot =?= TRUE' -format '%15s ||' Name -format '%6d |' TotalSlotCpus -format '%6d |' Cpus -format '%5d%% ||' '((TotalSlotCpus - Cpus) / (TotalSlotCpus * 1.0)) * 100' -format '%8dG |' '(TotalSlotMemory / 1024)' -format '%6dG |' '(Memory / 1024)' -format '%5d%% |' '((TotalSlotMemory - Memory) / (TotalSlotMemory * 1.0)) * 100' -format '\n' TRUE | sed 's/slot1@\([^.]*\).bioclust.biologie.ens.fr/\1/g'; echo '------------------------------------------------------------------';"
+alias css="condor_status -submitters"
+alias cup="condor_userprio"
+alias cupa="condor_userprio -allusers"
+alias ch="condor_history"
+alias cq_loop="watch -n 1 condor_q"
+alias niceCI="condor_submit -i /kingdoms/a2e/workspace2/mgautier/Condor/niceUser.sub"
+
+# Grep colors
+#export GREP_COLOR='1;33'
+
+# Adding thousands separators to line count
+wl() {
+	# The function can be used alone with a parameter or within a piped command.
+	# It is not very good with several files, better use 'wc -l'.
+	if [[ $# -eq 0 ]]; then #Function called with a file as parameter
+		nb=$(wc -l)
+	elif [[ $# -eq 1 ]]; then #Function called within a piped command
+		nb=$(wc -l $1 | cut -f1 -d' ')
+	else #Function called with a list of file (not perfect)
+		echo $(wc -l $*) | sed 's/\([0-9]* [^ ]*\) \([0-9]* [^ ]*\)/\1\n\2/g' | sed 's/\([0-9]* [^ ]*\) \([0-9]* [^ ]*\)/\1\n\2/g'
+		return 0
+	fi
+
+	# Adding thousand separators within the line count number
+	new=''
+	for ((i=${#nb};i>0;i-=3)) do
+		if [[ $i -le 3 ]]; then #When there is still 3 figures or less
+			new=${nb:0:i}$new
+		else
+			new='.'${nb:$(($i-3)):3}$new
+		fi
+	done
+
+	# Printing the results
+	if [[ $# -eq 0 ]]; then
+		echo $new
+	else
+		echo $new $(wc -l $1 | cut -f2 -d' ')
+	fi
+}
+
+
+
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+zsh
+

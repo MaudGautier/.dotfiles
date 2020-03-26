@@ -1,0 +1,305 @@
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
+
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+ZSH_THEME="maud"
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git z)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# ssh
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Set vim as default text editor
+export EDITOR='vim'
+
+
+#### CUSTOM ####
+
+alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+# Create a new directory and enter it
+function mkd() {
+	mkdir -p "$@" && cd "$_";
+}
+
+# Determine size of a file or total size of a directory
+function fs() {
+	if du -b /dev/null > /dev/null 2>&1; then
+		local arg=-sbh;
+	else
+		local arg=-sh;
+	fi
+	if [[ -n "$@" ]]; then
+		du $arg -- "$@";
+	else
+		du $arg .[^.]* *;
+	fi;
+}
+
+# `s` with no arguments opens the current directory in Sublime Text, otherwise
+# opens the given location
+function s() {
+	if [ $# -eq 0 ]; then
+		subl .;
+	else
+		subl "$@";
+	fi;
+}
+
+# `a` with no arguments opens the current directory in Atom Editor, otherwise
+# opens the given location
+function a() {
+	if [ $# -eq 0 ]; then
+		atom .;
+	else
+		atom "$@";
+	fi;
+}
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias h='head -5'
+alias t='tail -n5'
+alias dirsize="du -h -d 1"
+alias c='column -t'
+hc () {
+	if [ "$1" != "" ]
+	then head -n5 "$1" | column -t
+	else head -n5 | column -t
+	fi
+}
+alias watch='watch '
+alias w1='watch -n1 '
+alias w5='watch -n5 '
+# alias wl='wc -l'
+
+# # ALIASES CLUSTER
+# # alias crak="qdel -u gautier"
+# alias qs='qstat'
+# alias qsg='qstat -u gautier'
+# alias qi='qsub -I'
+# qm () { qsub -I -l mem="$@" }
+# # alias quota='pan_quota /pandata/gautier ; pan_quota /panhome/gautier'
+# alias quota='pan_quota /pandata/gautier ; /usr/sbin/beegfs-ctl --getquota --uid gautier'
+# alias cchck='qs | grep -e "R q1month" -e "Q q1month" | wc -l; qs | grep -e "R q1week" -e "Q q1week" | wc -l ; qs | grep -e "R q1day" -e "Q q1day" | wc -l ; qs | grep -e "R q1hour" -e "Q q1hour" | wc -l' # Cluster check
+# # alias mck='qsg | grep R | grep q1 | wc -l ; qsg | grep Q | grep q1 | wc -l' # My check
+# alias mck='qstat -u gautier | grep R | grep q1 | wc -l ; qstat -u gautier | grep Q | grep q1 | wc -l' # My check
+# alias mckh="qsg | grep R | grep q1 | wc -l ; qsg | grep Q | grep q1 | wc -l ; qsg | grep H | grep q1 | wc -l" # My check with H
+# alias ssub="qsg | grep -e R -e Q -e H | grep q1 | wc -l" # sum submissions
+# alias qwho="qs | cut -b45-55,72-|sed '1,1d'|sed '1,1d'|sort|uniq -c|sort -gr"
+#
+
+# ALIASES CLUSTER SLURM
+# alias crak="qdel -u gautier"
+alias qs='squeue | body sort'
+alias qsg='squeue -u gautier | body sort'
+alias qi='srun --pty bash'
+# qm () { qsub -I -l mem="$@" }
+# alias quota='pan_quota /pandata/gautier ; pan_quota /panhome/gautier'
+alias quota='/usr/sbin/beegfs-ctl --getquota --uid gautier'
+alias cchck='echo -n "R:" `squeue | cut -b48-50 | grep R | wc -l` "\nPD:" `squeue | cut -b48-50 | grep PD | wc -l` "\n"' # Cluster check
+# alias mck='qsg | grep R | grep q1 | wc -l ; qsg | grep Q | grep q1 | wc -l' # My check
+alias mck='echo -n "R:" `squeue -u gautier | cut -b48-50 | grep R | wc -l` "\nPD:" `squeue -u gautier | cut -b48-50 | grep PD | wc -l` "\n"' # My check
+# alias mckh="qsg | grep R | grep q1 | wc -l ; qsg | grep Q | grep q1 | wc -l ; qsg | grep H | grep q1 | wc -l" # My check with H
+# alias ssub="qsg | grep -e R -e Q -e H | grep q1 | wc -l" # sum submissions
+alias qwho="squeue | cut -b39-50|sed '1,1d'|sort|uniq -c|sort -gr"
+qjob () { scontrol show job "$@" -d | grep Command }
+
+# ALIAS SCREEN
+alias sl='screen -list'
+sr() { screen -r "$@" }
+alias sc='screen'
+
+
+# alias crm="condor_rm"
+# alias crak="condor_rm mgautier"
+# alias cq="condor_q"
+# alias cqk='condor_q mgautier'
+# alias cqg="condor_q -g"
+# alias cqr="condor_q -r"
+# alias cqgr="condor_q -g -r"
+# alias cqba="condor_q -g -better-analyze"
+# alias cs="condor_status"
+# alias csa="echo -e '------------------------------------------------------------------\nName       || Cpus  | Avail | Util% || Memory   | Avail  | Util% |\n------------------------------------------------------------------'; condor_status -constraint 'PartitionableSlot =?= TRUE' -format '%15s ||' Name -format '%6d |' TotalSlotCpus -format '%6d |' Cpus -format '%5d%% ||' '((TotalSlotCpus - Cpus) / (TotalSlotCpus * 1.0)) * 100' -format '%8dG |' '(TotalSlotMemory / 1024)' -format '%6dG |' '(Memory / 1024)' -format '%5d%% |' '((TotalSlotMemory - Memory) / (TotalSlotMemory * 1.0)) * 100' -format '\n' TRUE | sed 's/slot1@\([^.]*\).bioclust.biologie.ens.fr/\1/g'; echo '------------------------------------------------------------------';"
+# alias css="condor_status -submitters"
+# alias cup="condor_userprio"
+# alias cupa="condor_userprio -allusers"
+# alias ch="condor_history"
+# alias cq_loop="watch -n 1 condor_q"
+# alias niceCI="condor_submit -i /kingdoms/a2e/workspace2/mgautier/Condor/niceUser.sub"
+
+
+wl () {
+        # The function can be used alone with a parameter or within a piped command.
+        # It is not very good with several files, better use 'wc -l'.
+        if [[ $# -eq 0 ]]; then #Function called with a file as parameter
+                nb=$(wc -l)
+        elif [[ $# -eq 1 ]]; then #Function called within a piped command
+                nb=$(wc -l $1 | cut -f1 -d' ')
+        else #Function called with a list of file (not perfect)
+                echo $(wc -l $*) | sed 's/\([0-9]* [^ ]*\) \([0-9]* [^ ]*\)/\1\n\2/g' | sed 's/\([0-9]* [^ ]*\) \([0-9]* [^ ]*\)/\1\n\2/g'
+                return 0
+        fi
+
+        # Adding thousand separators within the line count number
+        new=''
+        for ((i=${#nb};i>0;i-=3)) do
+				if [[ $i -le 3 ]]; then #When there is still 3 figures or less
+						new=${nb:0:$i}$new
+				else
+						new=','${nb:$(($i-3)):3}$new
+				fi
+        done
+
+        # Printing the results
+        if [[ $# -eq 0 ]]; then
+                echo $new
+        else
+                echo $new $(wc -l $1 | cut -f2 -d' ')
+        fi
+}
+sep () {
+
+		if [[ $# -eq 0 ]]; then #Function called within a piped command
+				nb=$(cat)
+		elif [[ $# -eq 1 ]]; then #Function called with a number as parameter
+				nb=$(echo $1)
+		else
+				return 0
+		fi
+
+		# Adding thousand separators within the line count number
+		new=''
+		for ((i=${#nb};i>0;i-=3)) do
+				if [[ $i -le 3 ]]; then #When there is still 3 figures or less
+						new=${nb:0:$i}$new
+				else
+						new=','${nb:$(($i-3)):3}$new
+				fi
+		done
+
+		# Printing the results
+		echo $new
+}
+
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
+
+# append to the history file, don't overwrite it
+# shopt -s histappend
+
+alias pbil='ssh gautier@pbil-deb'
+
+# alias mkmount='bash /Users/maudgautier/Documents/These/Local_Scripts/make_mountpoints.bash'
+
+
+jdk8 () {
+	export JAVAHOME=/usr/remote/jdk1.8.0_112
+	export PATH=/usr/remote/jdk1.8.0_112/bin:$PATH
+}
+jdk7 () {
+	export JAVAHOME=/usr/remote/jdk1.7.0_75
+	export PATH=/usr/remote/jdk1.7.0_75/bin:$PATH
+}
+jdk6 () {
+	export JAVAHOME=/usr/remote/jdk1.6.0_06
+	export PATH=/usr/remote/jdk1.6.0_06/bin:$PATH
+}
+
+### SOURCE GLOBAL VARIABLES
+source $HOME/1_Scripts/Global_Variables.bash
+cd $WD
+
+
+
+crak () {
+	numbers="$@"
+	nb1=`echo ${numbers%:*}`
+	nb2=`echo ${numbers##*:}`
+	for i in {$nb1..$nb2} ; do scancel $i ; done
+}
+
+body() {
+	IFS= read -r header
+	printf '%s\n' "$header"
+	"$@"
+}
+
+
