@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/maudgautier/.oh-my-zsh
+export ZSH=$HOME/.dotfiles/oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -249,7 +249,7 @@ alias unm='bash /Users/maudgautier/Documents/These/Local_Scripts/unmount_mountpo
 
 export PATH=$PATH:/Applications/bedtools2/bin
 
-cd /Users/maudgautier/Documents/These
+# cd /Users/maudgautier/Documents/These
 
 
 # Pour SRA-toolkit (https://github.com/ncbi/sra-tools/wiki/Building-and-Installing-from-Source)
