@@ -1,5 +1,9 @@
-# In ~/.zshenv, write:
-# echo ". ~/.dotfiles/.zsh/.zshenv" > ~/.zshenv
+# Environment variables
 
-# Set directories
-# export ZDOTDIR=~/.dotfiles/zsh
+export MANPATH="/usr/local/man:$MANPATH"
+export EDITOR="vim"
+
+if [ -d "$HOME/bin" ]; then
+    export PATH=$HOME/bin:$PATH
+fi
+
