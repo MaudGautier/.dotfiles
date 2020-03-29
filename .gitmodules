@@ -13,3 +13,6 @@
 [submodule "vim/bundle/vim-airline"]
 	path = vim/bundle/vim-airline
 	url = git@github.com:github.com/vim-airline/vim-airline
+[submodule "vim/pathogen"]
+	path = vim/pathogen
+	url = git@github.com:github.com/tpope/vim-pathogen.git
