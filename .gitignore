@@ -1,2 +1,4 @@
 .*swp
 oh-my-zsh/
+.zsh/.zcomp*
+.zsh/.zsh_history
