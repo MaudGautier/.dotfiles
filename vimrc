@@ -1,4 +1,4 @@
-" " VIM Configuration - Vincent Jousse
+" VIM Configuration - Vincent Jousse
 " Annule la compatibilite avec l'ancetre Vi : totalement indispensable
 set nocompatible
 " Activation de pathogen
@@ -130,4 +130,33 @@ let g:syntastic_cpp_compiler_options = ' -std=c++11'
 
 " From vimrc_pbil
 " map <silent> <F3> "<Esc>:match ErrorMsg '\%>80v.\+'<CR>"
+
+" Syntastic recommmendations
+" (https://github.com/vim-syntastic/syntastic/tree/675f67eea29308537438eb49b3b28a444c1e4689)
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" Commenting blocks of code. (https://stackoverflow.com/questions/1676632/whats-a-quick-way-to-comment-uncomment-lines-in-vim/1676690)
+" NOT required with NERD commenter!
+" autocmd FileType c,cpp,java,scala let b:comment_leader = '// '
+" autocmd FileType sh,ruby,python   let b:comment_leader = '# '
+" autocmd FileType conf,fstab       let b:comment_leader = '# '
+" autocmd FileType tex              let b:comment_leader = '% '
+" autocmd FileType mail             let b:comment_leader = '> '
+" autocmd FileType vim              let b:comment_leader = '" '
+" noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
+" noremap <silent> ,cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
+
+" Highlight special words (https://stackoverflow.com/questions/4097259/in-vim-how-do-i-highlight-todo-and-fixme)
+augroup vimrc_todo
+    au!
+    au Syntax * syn match MyTodo /\v<(FIXME|NOTE|TODO|OPTIMIZE|XXX|WARNING|ERROR)/
+          \ containedin=.*Comment,vimCommentTitle
+augroup END
+hi def link MyTodo Todo
 
