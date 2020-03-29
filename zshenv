@@ -2,4 +2,4 @@
 # echo ". ~/.dotfiles/.zsh/.zshenv" > ~/.zshenv
 
 # Set directories
-export ZDOTDIR=~/.dotfiles/.zsh
+# export ZDOTDIR=~/.dotfiles/zsh
