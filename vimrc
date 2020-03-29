@@ -1,4 +1,4 @@
-" VIM Configuration - Vincent Jousse
+" " VIM Configuration - Vincent Jousse
 " Annule la compatibilite avec l'ancetre Vi : totalement indispensable
 set nocompatible
 " Activation de pathogen
@@ -126,3 +126,8 @@ let g:syntastic_cpp_compiler_options = ' -std=c++11'
 " highlight Comment cterm=italic
 " " To enable highlighting of C++ library concepts
 " let g:cpp_concepts_highlight = 1
+
+
+" From vimrc_pbil
+" map <silent> <F3> "<Esc>:match ErrorMsg '\%>80v.\+'<CR>"
+
