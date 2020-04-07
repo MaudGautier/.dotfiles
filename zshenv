@@ -11,6 +11,9 @@ if [ -d "$HOME/bin" ]; then
     export PATH=$HOME/bin:$PATH
 fi
 
+# Default python bins as python3 bins
+export PATH=/usr/local/opt/python/libexec/bin/:$PATH
+
 # C++/clang
 # export PATH="/usr/local/opt/llvm/bin:$PATH"
 

@@ -35,11 +35,11 @@ alias lb='pdflatex main.tex ; bibtex main.aux ; pdflatex main.tex ; pdflatex mai
 # alias lb='latex main.tex ; bibtex main.aux ; latex main.tex ; pdflatex main.tex ; pdflatex main.tex'
 
 # Rapid movements
-alias dl="cd ~/Downloads"
-alias dt="cd ~/Desktop"
-alias doc="cd ~/Documents"
-alias p2="python"
-alias p3="python3"
+alias dl='cd ~/Downloads'
+alias dt='cd ~/Desktop'
+alias doc='cd ~/Documents'
+alias p2='python2'
+alias p3='python3'
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
