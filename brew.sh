@@ -22,6 +22,7 @@ python3
 tree
 vim
 wget
+zsh
 )
 
 CASKS=(
