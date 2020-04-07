@@ -32,6 +32,7 @@ alfred
 brave-browser
 go2shell
 iterm2
+java
 torbrowser
 vlc
 xquartz
