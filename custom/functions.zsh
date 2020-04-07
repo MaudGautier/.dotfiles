@@ -66,6 +66,13 @@ function gz() {
 	printf "gzip: %d bytes (%2.2f%%)\n" "$gzipsize" "$ratio";
 }
 
+# Git alias
+function acp() {
+  git add .
+  git commit -m "$1"
+  git push
+}
+
 # `v` with no arguments opens the current directory in Vim, otherwise opens the
 # given location
 function v() {
