@@ -16,7 +16,7 @@ sh ./brew.sh
 
 ### Oh my Zsh
 
-#### Alternative 1 (command line)
+#### Alternative 1 (git clone)
 
 Install oh-my-zsh if not already present
 ```
