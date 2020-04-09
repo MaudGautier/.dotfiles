@@ -160,3 +160,8 @@ augroup vimrc_todo
 augroup END
 hi def link MyTodo Todo
 
+" Allow to check r syntax with lint
+" let g:syntastic_enable_r_lintr_checker = 1
+" let g:syntastic_r_checkers = ['lintr']
+
+
