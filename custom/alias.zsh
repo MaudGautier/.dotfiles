@@ -26,6 +26,7 @@ alias tree='tree -C --dirsfirst'
 
 # Git
 alias glag='git log --all --graph'
+alias gmg='gcmsg'
 
 # LaTeX
 alias lbo='pdflatex main.tex ; bibtex main.aux ; pdflatex main.tex ; pdflatex main.tex ; open main.pdf'
