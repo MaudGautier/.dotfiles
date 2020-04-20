@@ -155,7 +155,7 @@ let g:syntastic_check_on_wq = 0
 " Highlight special words (https://stackoverflow.com/questions/4097259/in-vim-how-do-i-highlight-todo-and-fixme)
 augroup vimrc_todo
     au!
-    au Syntax * syn match MyTodo /\v<(FIXME|NOTE|TODO|OPTIMIZE|XXX|WARNING|ERROR)/
+    au Syntax * syn match MyTodo /\v<(FIXME|NB|TODO|OPTIMIZE|XXX|WARNING|ERROR)/
           \ containedin=.*Comment,vimCommentTitle
 augroup END
 hi def link MyTodo Todo
