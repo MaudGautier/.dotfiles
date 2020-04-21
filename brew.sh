@@ -18,6 +18,7 @@ R
 diff-pdf
 git
 java
+pandoc
 python3
 tree
 vim
@@ -33,6 +34,7 @@ brave-browser
 go2shell
 iterm2
 java
+mactex
 torbrowser
 vlc
 xquartz
