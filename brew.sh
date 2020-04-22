@@ -36,6 +36,7 @@ iterm2
 java
 mactex
 torbrowser
+visual-studio-code
 vlc
 xquartz
 zotero
