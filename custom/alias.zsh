@@ -41,6 +41,7 @@ alias dt='cd ~/Desktop'
 alias doc='cd ~/Documents'
 alias p2='python2'
 alias p3='python3'
+alias python='python3'
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
