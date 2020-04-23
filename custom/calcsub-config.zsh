@@ -38,3 +38,7 @@ qjob () {
 	qstat -f "$@" | grep -e Error_Path -e Output_Path -e submit_args
 }
 
+### KDI aliases
+alias kdi='/data/kdi_prod/bin/kdi_analyse' 
+alias kc='kdi create'
+
