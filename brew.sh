@@ -32,6 +32,7 @@ Rstudio
 alfred
 brave-browser
 go2shell
+intellij-idea-ce
 iterm2
 java
 mactex
