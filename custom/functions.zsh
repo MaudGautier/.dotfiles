@@ -161,3 +161,8 @@ sep () {
 		echo $new
 }
 
+# Read comma-separated file as tab-separated
+comma() {
+	sed -e "s/,/\\t/g" "$@" | c
+}
+
