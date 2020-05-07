@@ -41,4 +41,5 @@ qjob () {
 ### KDI aliases
 alias kd='/data/kdi_prod/bin/kdi_analyse' 
 alias kc='kd create'
+alias kcsub='kd create-sub'
 
