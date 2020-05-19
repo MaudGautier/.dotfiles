@@ -18,6 +18,7 @@ R
 diff-pdf
 git
 java
+npm
 pandoc
 python3
 tree
