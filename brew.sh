@@ -24,6 +24,7 @@ python3
 tree
 vim
 wget
+yarn
 zsh
 )
 
