@@ -35,7 +35,11 @@ qf () {
 	qstat -f "$@" | grep submit_args
 }
 qjob () {
-	qstat -f "$@" | grep -e Error_Path -e Output_Path -e submit_args
+	qstat -f "$@" | grep Job_Name
+	qstat -f "$@" | \
+		grep -A 1 -e Error_Path -e Output_Path -e submit_args | \
+		paste - - - | cut -f1-3 | sed 's/\t//g' | \
+		grep -e Error_Path -e Output_Path -e submit_args
 }
 
 ### KDI aliases
