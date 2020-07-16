@@ -48,6 +48,10 @@ alias kc='kd create'
 alias kcsub='kd create-sub'
 
 
+### PATH completion
+# Add bedtools
+export PATH="/bioinfo/local/build/Centos/bedtools/bedtools-2.27.1/bin:$PATH"
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/data/users/mgautie3/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
