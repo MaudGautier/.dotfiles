@@ -7,7 +7,7 @@ call pathogen#infect()
 " -- Affichage
 set title                 " Met a jour le titre de votre fenetre ou de
                           " votre terminal
-set number                " Affiche le numero des lignes
+set nonumber              " Ne pas afficher le numero des lignes
 nnoremap <F2> :set nonumber!<CR>
 set ruler                 " Affiche la position actuelle du curseur
 set wrap                  " Affiche les lignes trop longues sur plusieurs
