@@ -17,6 +17,7 @@ FORMULAS=(
 R
 diff-pdf
 git
+inetutils
 java
 npm
 pandoc
