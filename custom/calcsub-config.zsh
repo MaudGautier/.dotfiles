@@ -14,7 +14,7 @@ alias qq='qstat -Q'
 # alias quota='pan_quota /pandata/gautier ; pan_quota /panhome/gautier'
 # alias quota='pan_quota /pandata/gautier ; /usr/sbin/beegfs-ctl --getquota --uid gautier'
 # alias cchck='qs | grep -e "R q1month" -e "Q q1month" | wc -l; qs | grep -e "R q1week" -e "Q q1week" | wc -l ; qs | grep -e "R q1day" -e "Q q1day" | wc -l ; qs | grep -e "R q1hour" -e "Q q1hour" | wc -l' # Cluster check
-alias mck='echo "R: "`qstat -n1 -u mgautie3 | cut -c103,104 | grep R | wl`; echo "Q: "`qstat -n1 -u mgautie3 | cut -c103,104 | grep C | wl`; echo "H: "`qstat -n1 -u mgautie3 | cut -c103,104 | grep H | wl`'
+alias mck='echo "R: "`qstat -n1 -u mgautie3 | cut -c103,104 | grep R | wl`; echo "Q: "`qstat -n1 -u mgautie3 | cut -c103,104 | grep Q | wl`; echo "H: "`qstat -n1 -u mgautie3 | cut -c103,104 | grep H | wl`'
 # alias ssub="qsg | grep -e R -e Q -e H | grep q1 | wc -l" # sum submissions
 # alias qwho="qs | cut -b45-55,72-|sed '1,1d'|sed '1,1d'|sort|uniq -c|sort -gr"
 
