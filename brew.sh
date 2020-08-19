@@ -15,6 +15,7 @@ fi
 
 FORMULAS=(
 R
+datamash
 diff-pdf
 git
 inetutils
