@@ -13,6 +13,7 @@ mkmount () {
 	sshfs -o reconnect mgautie3@calcsub.curie.fr:/data/kdi_prod/project_result/726/26.02/ /Users/maudgautier/OSXFUSE-calcsub-tumors-nadege/
 	sshfs -o reconnect mgautie3@calcsub.curie.fr:/data/kdi_prod/project_result/726/27.01/ /Users/maudgautier/OSXFUSE-calcsub-scallop-julien/
 	sshfs -o reconnect mgautie3@calcsub.curie.fr:/data/kdi_prod/project_result/726/27.02/ /Users/maudgautier/OSXFUSE-calcsub-arms-julien/
+	sshfs -o reconnect mgautie3@calcsub.curie.fr:/data/kdi_prod/project_result/726/27.03/ /Users/maudgautier/OSXFUSE-calcsub-dsrct-julien/
 }
 
 ### Unmount sshfs connections
@@ -22,5 +23,6 @@ unm () {
 	umount /Users/maudgautier/OSXFUSE-calcsub-tumors-nadege/
 	umount /Users/maudgautier/OSXFUSE-calcsub-scallop-julien/
 	umount /Users/maudgautier/OSXFUSE-calcsub-arms-julien/
+	umount /Users/maudgautier/OSXFUSE-calcsub-dsrct-julien/
 }
 
