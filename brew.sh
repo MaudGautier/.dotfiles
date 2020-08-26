@@ -40,10 +40,12 @@ intellij-idea-ce
 iterm2
 java
 mactex
+skype
 torbrowser
 visual-studio-code
 vlc
 xquartz
+zoom
 zotero
 )
 
