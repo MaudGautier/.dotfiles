@@ -68,7 +68,7 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 # Add JVARKIT
-export JVARKIT="~/bin/jvarkit"
-export JVARKIT_DIST="$JVARKIT/dist"
+export JVARKIT=~/bin/jvarkit
+export JVARKIT_DIST=$JVARKIT/dist
 
 
