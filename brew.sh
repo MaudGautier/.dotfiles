@@ -15,6 +15,7 @@ fi
 
 FORMULAS=(
 R
+csvkit
 datamash
 diff-pdf
 git
