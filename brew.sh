@@ -25,6 +25,7 @@ java
 llvm
 npm
 pandoc
+postgres
 python3
 tree
 vim
