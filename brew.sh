@@ -22,6 +22,7 @@ diff-pdf
 git
 inetutils
 java
+llvm
 npm
 pandoc
 python3
