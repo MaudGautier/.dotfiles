@@ -15,6 +15,7 @@ fi
 
 FORMULAS=(
 R
+boost
 csvkit
 datamash
 diff-pdf
