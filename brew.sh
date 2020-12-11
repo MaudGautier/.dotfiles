@@ -22,6 +22,7 @@ diff-pdf
 git
 inetutils
 java
+libgit2
 llvm
 npm
 pandoc
