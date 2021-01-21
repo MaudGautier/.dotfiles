@@ -19,6 +19,7 @@ boost
 csvkit
 datamash
 diff-pdf
+gawk
 git
 inetutils
 java
