@@ -4,7 +4,7 @@
 
 Clone repository and move to `~/.dotfiles`
 ```
-git clone git@github.com:MaudGautier/dotfiles.git ~/.dotfiles
+git clone https://github.com/MaudGautier/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 ```
 
