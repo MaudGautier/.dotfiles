@@ -34,6 +34,7 @@ alfred
 dashlane
 go2shell
 iterm2
+slack
 zoom
 vlc
 )
