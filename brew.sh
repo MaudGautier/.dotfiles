@@ -12,6 +12,29 @@ then
 #ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
+DEV_FORMULAS_AND_CASKS=(
+### Formulas
+awscli
+docker
+gitkraken
+node
+webstorm
+yarn
+# datagrip
+pandoc
+tree
+gawk
+python3
+R
+
+### Casks
+1password
+alfred
+go2shell
+iterm2
+zoom
+vlc
+)
 
 FORMULAS=(
 R
@@ -56,12 +79,14 @@ zotero
 )
 
 
-brew install ${FORMULAS[@]}
+brew install ${DEV_FORMULAS_AND_CASKS[@]}
 
-brew cask install --appdir="/Applications" ${CASKS[@]}
+# brew install ${FORMULAS[@]}
+
+# brew cask install --appdir="/Applications" ${CASKS[@]}
 
 brew cleanup
 
-brew cask cleanup
+# brew cask cleanup
 
 
