@@ -21,6 +21,7 @@ node
 webstorm
 yarn
 # datagrip
+google-chrome
 pandoc
 tree
 gawk
