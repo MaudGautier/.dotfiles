@@ -31,6 +31,7 @@ R
 ### Casks
 1password
 alfred
+dashlane
 go2shell
 iterm2
 zoom
