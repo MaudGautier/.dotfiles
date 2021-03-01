@@ -24,6 +24,7 @@ configfiles=(
 	# mac-to-pbil-config.zsh
 	# pbil-config.zsh
 	# pbil-pbs-config.zsh
+	# ovrsea-config.zsh
 	)
 for config in ${configfiles[@]} ; do
 	ln -s ~/.dotfiles/custom/$config ~/.dotfiles/ohmyzsh/custom/
