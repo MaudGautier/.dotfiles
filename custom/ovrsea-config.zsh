@@ -22,5 +22,6 @@
 
 # So that the right version of ndoeJS (that installed by nvm) is used when I reopen a new terminal, I add in my .zshrc:
 export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"
+# [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"
+export PATH=$NVM_DIR/versions/node/v15.10.0/bin:$PATH
 
