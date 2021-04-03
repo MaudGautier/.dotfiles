@@ -19,3 +19,6 @@
 [submodule "vim/bundle/vim-jsx-pretty"]
 	path = vim/bundle/vim-jsx-pretty
 	url = https://github.com/maxmellon/vim-jsx-pretty.git
+[submodule "custom/omz-plugins/zsh-autosuggestions"]
+	path = custom/omz-plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions.git

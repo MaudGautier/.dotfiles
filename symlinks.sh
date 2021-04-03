@@ -30,6 +30,9 @@ for config in ${configfiles[@]} ; do
 	ln -s ~/.dotfiles/custom/$config ~/.dotfiles/ohmyzsh/custom/
 done
 
+# Custom ohmyzsh plugins
+ln -s ~/.dotfiles/custom/omz-plugins/zsh-autosuggestions ~/.dotfiles/ohmyzsh/custom/plugins
+
 ## Vim
 ln -s ~/.dotfiles/vim ~/.vim
 ln -s ~/.dotfiles/vimrc ~/.vimrc
