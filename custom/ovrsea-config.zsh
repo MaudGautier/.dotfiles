@@ -23,5 +23,11 @@
 # So that the right version of ndoeJS (that installed by nvm) is used when I reopen a new terminal, I add in my .zshrc:
 export NVM_DIR="$HOME/.nvm"
 # [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"
-export PATH=$NVM_DIR/versions/node/v15.10.0/bin:$PATH
+export PATH=$NVM_DIR/versions/node/v14.16.0/bin:$PATH
+
+# Custom aliases
+alias devdb='ssh -N -i "~/.ssh/bastion-dev.pem" -L 6543:station-db-development.cgm31kq1agcx.eu-west-1.rds.amazonaws.com:6543 ec2-user@ec2-54-78-84-122.eu-west-1.compute.amazonaws.com'
+alias sshdevdb='devdb'
+alias proddb='ssh -N -i "bastion-prod.pem" -L 6543:db-prod-cluster.cgm31kq1agcx.eu-west-1.rds.amazonaws.com:6543 ec2-user@ec2-3-248-239-240.eu-west-1.compute.amazonaws.com'
+alias sshproddb='proddb'
 

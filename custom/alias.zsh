@@ -23,11 +23,15 @@ alias sl='screen -list'
 sr() { screen -r "$@" }
 alias sc='screen'
 alias tree='tree -C --dirsfirst'
+alias myip='curl http://ipecho.net/plain'
 
 # Git
 alias glag='git log --all --graph'
 alias gmg='gcmsg'
 alias gcsmg='gcmsg'
+alias glop='git -P log --pretty=oneline -10'
+alias gplo='git -P log --pretty=oneline -10'
+alias gpbl='git -P branch --list'
 
 # LaTeX
 alias lbo='pdflatex main.tex ; bibtex main.aux ; pdflatex main.tex ; pdflatex main.tex ; open main.pdf'
@@ -61,4 +65,7 @@ alias ring="tput bel"
 # Kill all the tabs in Chrome to free up memory
 # [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
 alias chromekill="ps aux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
+
+# Webstorm
+alias ws='/usr/local/bin/webstorm'
 
