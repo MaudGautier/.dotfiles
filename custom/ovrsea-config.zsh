@@ -28,6 +28,10 @@ export PATH=$NVM_DIR/versions/node/v14.16.0/bin:$PATH
 # Custom aliases
 alias devdb='ssh -N -i "~/.ssh/bastion-dev.pem" -L 6543:station-db-development.cgm31kq1agcx.eu-west-1.rds.amazonaws.com:6543 ec2-user@ec2-54-78-84-122.eu-west-1.compute.amazonaws.com'
 alias sshdevdb='devdb'
-alias proddb='ssh -N -i "bastion-prod.pem" -L 6543:db-prod-cluster.cgm31kq1agcx.eu-west-1.rds.amazonaws.com:6543 ec2-user@ec2-3-248-239-240.eu-west-1.compute.amazonaws.com'
+alias proddb='ssh -N -i "~/.ssh/bastion-prod.pem" -L 6543:db-prod-cluster.cgm31kq1agcx.eu-west-1.rds.amazonaws.com:6543 ec2-user@ec2-3-248-239-240.eu-west-1.compute.amazonaws.com'
 alias sshproddb='proddb'
 
+# Customs paths
+export PATH="$HOME/.poetry/bin:$PATH"
+export PNPM_HOME="/Users/maudgautier/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"

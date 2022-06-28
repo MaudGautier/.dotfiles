@@ -27,6 +27,8 @@ tree
 gawk
 python3
 R
+black
+postman
 
 ### Casks
 1password
