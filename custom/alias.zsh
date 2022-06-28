@@ -32,6 +32,16 @@ alias gcsmg='gcmsg'
 alias glop='git -P log --pretty=oneline -10'
 alias gplo='git -P log --pretty=oneline -10'
 alias gpbl='git -P branch --list'
+alias grop='git rebase origin/prod'
+alias glast='git branch --sort=-committerdate'
+alias gla='glast'
+alias glah='glast | head -n 20'
+alias ghla='glah'
+alias gfh='git log --all --full-history --oneline'
+alias gname='git show --name-only'
+alias gn='gname'
+alias gdiffname='git diff --name-status'
+alias gdn='gdiffname'
 
 # LaTeX
 alias lbo='pdflatex main.tex ; bibtex main.aux ; pdflatex main.tex ; pdflatex main.tex ; open main.pdf'
@@ -68,4 +78,8 @@ alias chromekill="ps aux | grep '[C]hrome Helper --type=renderer' | grep -v exte
 
 # Webstorm
 alias ws='/usr/local/bin/webstorm'
+
+# Edit aliases
+alias moda='vim ~/.dotfiles/custom/alias.zsh'
+alias modf='vim ~/.dotfiles/custom/functions.zsh'
 

@@ -166,3 +166,17 @@ comma() {
 	sed -e "s/,/\\t/g" "$@" | c
 }
 
+# Read semi-column-separated file as tab separated + select columns
+semi() {
+	sed -e "s/;/\\t/g" "$@" #| awk -v args="$*" -vFS="\t" -vOFS="\t" 'BEGIN { n=split(args,f) } { for (i=1;i<=n;i++) printf "%s%s", $(f[i]), (i<n?OFS:ORS) }'
+	# awk -vFS=";" -vOFS="\t" '{out=""; for(i=1;i<=NF;i++){out=out"\t"$i}; print out}' "$@"
+	# awk -vFS=";" -vOFS="\t" '{ print $0}' "$@" | column -t -s$'\t'
+}
+# sed -e "s/;/\\t/g" last_dmp_file.csv | awk -vFS="\t" -vOFS="\t" '{ print $4, $6, $7 }' | h | c
+# (focntionne)
+function a {
+	awk -v args="$*" '
+		BEGIN { n=split(args,f) }
+		{ for (i=1;i<=n;i++) printf "%s%s", $(f[i]), (i<n?OFS:ORS) }
+	'
+}
