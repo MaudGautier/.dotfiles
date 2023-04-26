@@ -28,10 +28,36 @@ export PATH=$NVM_DIR/versions/node/v14.16.0/bin:$PATH
 # Custom aliases
 alias devdb='ssh -N -i "~/.ssh/bastion-dev.pem" -L 6543:station-db-development.cgm31kq1agcx.eu-west-1.rds.amazonaws.com:6543 ec2-user@ec2-54-78-84-122.eu-west-1.compute.amazonaws.com'
 alias sshdevdb='devdb'
-alias proddb='ssh -N -i "~/.ssh/bastion-prod.pem" -L 6543:db-prod-cluster.cgm31kq1agcx.eu-west-1.rds.amazonaws.com:6543 ec2-user@ec2-3-248-239-240.eu-west-1.compute.amazonaws.com'
+# OLD
+#alias proddb='ssh -N -i "~/.ssh/bastion-prod.pem" -L 6543:db-prod-cluster.cgm31kq1agcx.eu-west-1.rds.amazonaws.com:6543 ec2-user@ec2-3-248-239-240.eu-west-1.compute.amazonaws.com'
+# NEW
+alias proddb='ssh -N -i "~/.ssh/bastion-prod-2.pem" -L 6543:db-prod-cluster.cgm31kq1agcx.eu-west-1.rds.amazonaws.com:6543 ec2-3-252-252-202.eu-west-1.compute.amazonaws.com'
 alias sshproddb='proddb'
+
+# Custom pnpm commands
+alias p='pnpm'
+alias pi='pnpm install'
+alias pii='pnpm install; pnpm run setup'
+alias pgt='pnpm generate:types'
+alias pdump='pnpm -F @ovrsea/federation dumps:download'
+alias pdb='pnpm -F @ovrsea/federation db:restore'
+alias pfed='pnpm -F @ovrsea/federation start'
+alias patlas='pnpm -F @ovrsea/atlas start'
+alias phermes='pnpm -F @ovrsea/hermes start'
+alias plocalstack='pnpm -F @ovrsea/federation localstack:start'
+alias dp='docker system prune --volumes -f'
+alias pa='patlas'
+alias ph='phermes'
+alias pf='pfed'
+alias pls='plocalstack'
+#psdr = p start dump restore
+#psr= p start restore
+#pstrt=p start # pstr
+
+alias mig='(z core && p db:migrate) & (z kronos && p db:migrate) & (z shipment-orchestration && p db:migrate) & (z account-networking && p db:migrate) & wait'
 
 # Customs paths
 export PATH="$HOME/.poetry/bin:$PATH"
 export PNPM_HOME="/Users/maudgautier/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
+
