@@ -39,7 +39,14 @@ iterm2
 slack
 zoom
 vlc
+
+### Others Ovrsea
+postgres (pour pg_restore)
+dbeaver-community
+pycharm-ce
+gnumeric (pour ssconvert xlsx to csv)
 )
+
 
 FORMULAS=(
 R

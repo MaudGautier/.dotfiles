@@ -41,3 +41,23 @@ sh ./symlinks.sh
 
 WARNING: the variable `configfiles` in `./symlinks.sh` must be modified manually to select specific custom file(s) of aliases to link from the `./custom/` folder.
 
+
+### Install submodules
+
+To install all submodules already added to the repo:
+
+```
+git submodule init
+git submodule update
+```
+
+To add a new submodule:
+
+!!! TODO 
+
+
+
+### Iterm configuration
+
+Use `misc/Dracula.itermcolors` and use it in term config
+

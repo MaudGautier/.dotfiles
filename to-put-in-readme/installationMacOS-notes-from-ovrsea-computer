@@ -1,0 +1,137 @@
+
+# Installations
+
+## Logiciels
+
+* Google chrome
+* Alfred
+* iterm2
+* brew
+* Zotero: install and copy paste folder /Users/username/Zotero from previous computer to new one.
+* tor (from Brave navigation privee)
+* oxsfuse (installation pas supportee par brew): depuis https://osxfuse.github.io/
+
+## Avec `brew install`
+
+* wget
+* python3
+* R
+* git
+* vim
+* diff-pdf
+* java
+
+## Avec `brew cask install`
+
+* Rstudio
+* xquartz
+* go2shell
+* brave-browser
+* vlc
+* java
+* zoom
+
+# Configurations
+
+## PATH
+A mettre dans le bashrc (pour avoir le symlink /usr/local/opt/python/libexec/bin/python qui redirige sur python3 quand on appelle python)
+`export PATH=/usr/local/opt/python/libexec/bin/:$PATH`
+
+## ssh
+
+Générer sa clé ssh:
+`ssh-keygen -b 4096`
+Mis dans: `~/.ssh`
+
+## Set up command files
+
+Clone files:
+`git clone git@github.com:MaudGautier/.dotfiles.git`
+
+Create sym link to the `.zshrc` file from the `.dotfiles/` repo:
+`ln -s .dotfiles/.zshrc ~/.zshrc`
+
+## Oh my zsh
+
+Instructions from the `ohmyzsh` github (https://github.com/ohmyzsh/ohmyzsh)[https://github.com/ohmyzsh/ohmyzsh]:
+
+* Download the `install.sh` file: `wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh`
+* Run the command line to install it in a custom directory: `ZSH="$HOME/.dotfiles/oh-my-zsh" sh install.sh`
+
+Then, do a symlink to the custom theme file: `ln -s ~/.dotfiles/maud.zsh-theme ~/.dotfiles/oh-my-zsh/custom/themes/maud.zsh-theme`
+
+
+## HostName, Computer Name, Bonjour Name (MacOS)
+
+Get names:
+`scutil --get ComputerName`
+`scutil --get LocalHostName`
+`scutil --get HostName`
+
+Modify name of one:
+`sudo scutil --set HostName NEW-NAME`
+
+Modify name of all together (from [https://www.naschenweng.info/2016/12/29/os-set-hostname-computer-name-bonjour-command-line/](https://www.naschenweng.info/2016/12/29/os-set-hostname-computer-name-bonjour-command-line/)):
+`export MY_NAME="MacMuffin"
+sudo scutil --set ComputerName "$MY_NAME" && \
+sudo scutil --set HostName "$MY_NAME" && \
+sudo scutil --set LocalHostName "$MY_NAME" && \
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$MY_NAME"`
+
+
+## Vim
+
+From [https://gist.github.com/vallettea/f551d2a0721ca403285f](https://gist.github.com/vallettea/f551d2a0721ca403285f):
+
+Install pathogen and proper directory structure:
+`cd
+mkdir -p .vim/{autoload,colors,syntax,plugin,spell,config}
+git clone https://github.com/tpope/vim-pathogen.git pathogen
+cd autoload
+ln -s ../pathogen/autoload/pathogen.vim .
+`
+
+Install NERDtree:
+`cd ~/.vim
+mkdir -p bundle
+cd bundle
+git clone https://github.com/scrooloose/nerdtree.git nerdtree
+`
+
+Install vim-airline:
+`cd ~/.vim/bundle
+git clone https://github.com/vim-airline/vim-airline`
+
+
+Install syntastic (as a pathogen bundle) [https://github.com/vim-syntastic/syntastic/tree/675f67eea29308537438eb49b3b28a444c1e4689](https://github.com/vim-syntastic/syntastic/tree/675f67eea29308537438eb49b3b28a444c1e4689):
+`cd ~/.vim/bundle && \
+git clone --depth=1 https://github.com/vim-syntastic/syntastic.git`
+
+Install auto-pairs [https://github.com/jiangmiao/auto-pairs/tree/84518168107c34fb540ee4f8cde743ceaf682bae](https://github.com/jiangmiao/auto-pairs/tree/84518168107c34fb540ee4f8cde743ceaf682bae):
+`git clone git://github.com/jiangmiao/auto-pairs.git ~/.vim/bundle/auto-pairs`
+
+Install NERD Commenter [https://github.com/preservim/nerdcommenter/tree/18cfe815501c8264844223a944eb388285b48caa](https://github.com/preservim/nerdcommenter/tree/18cfe815501c8264844223a944eb388285b48caa):
+`cd ~/.vim/bundle
+git clone https://github.com/scrooloose/nerdcommenter.git`
+
+
+
+## Git submodules (better than git clone): used to get submodules into the repo
+```git submodule add git@github.com:github.com/tpope/vim-pathogen.git vim/pathogen```
+
+
+## Git submodule for vim-jsx-pretty
+```git submodule add https://github.com/maxmellon/vim-jsx-pretty.git vim/bundle/vim-jsx-pretty```
+
+
+
+#TODO:
+OK Install Zotero
+OK Install Seurat
+OK vim: add todo in colored in vimrc
+OK vim: choose plugins to add
+install evernote
+OK dotfiles: sym link to .vim folder,
+OK zshrc: aliases dans doc differents, set-up dans doc different
+
+

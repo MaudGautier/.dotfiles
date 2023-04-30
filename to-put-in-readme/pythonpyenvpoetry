@@ -1,0 +1,23 @@
+# Installation de versions avec pyenv
+brew install pyenv
+pyenv install 3.8.12
+
+# Installation de poetry
+brew install poetry
+
+# Dans rates-integ
+version de python dans pyproject.toml => poetry shell crée un shell avec cette version
+
+# Forcer une autre version de python : 
+(installée par pyenv et utilisée par poetry)
+poetry env use /Users/maudgautier/.pyenv/versions/3.8.12/bin/python
+poetry shell
+>>> Spawning shell within /Users/maudgautier/Library/Caches/pypoetry/virtualenvs/rates-integration-WF0hKYqM-py3.8
+
+
+brew uninstall poetry
+
+curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | /Users/maudgautier/.pyenv/versions/3.8.12/bin/python -
+
+(pour tester de solutionner mon problème où python10 est utilisé) mais ça n'a pas marché
+
