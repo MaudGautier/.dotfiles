@@ -95,3 +95,17 @@ HISTCONTROL=ignoreboth
 # append to the history file, don't overwrite it
 # shopt -s histappend
 
+# # --- FOR OVRSEA
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#
+# # pnpm
+# export PNPM_HOME="/Users/maudgautier/Library/pnpm"
+# export PATH="$PNPM_HOME:$PATH"
+# # pnpm end
+# #
+#
+# export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+# export PUPPETEER_EXECUTABLE_PATH=`which chromium`
+#
