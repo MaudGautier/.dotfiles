@@ -44,6 +44,8 @@ alias gname='git show --name-only'
 alias gn='gname'
 alias gdiffname='git diff --name-status'
 alias gdn='gdiffname'
+alias grom='git rebase origin/main'
+alias gfom='git fetch origin main'
 
 # LaTeX
 alias lbo='pdflatex main.tex ; bibtex main.aux ; pdflatex main.tex ; pdflatex main.tex ; open main.pdf'
