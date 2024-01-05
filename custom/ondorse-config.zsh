@@ -1,5 +1,5 @@
 # Custom aliases
-alias setup='cd ~/Documents/ovs; source setup_local_env.sh; cd backend/app; source /Users/maud-ondorse/Library/Caches/pypoetry/virtualenvs/app-mtOeN1wO-py3.9/bin/activate'
+alias setup='cd ~/Documents/ovs; source setup_local_env.sh; cd backend/app; source /Users/maud-ondorse/Library/Caches/pypoetry/virtualenvs/app-mtOeN1wO-py3.11/bin/activate'
 
 
 # alias mig='(z core && p db:migrate) & (z kronos && p db:migrate) & (z shipment-orchestration && p db:migrate) & (z account-networking && p db:migrate) & wait'
